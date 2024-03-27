@@ -1,6 +1,6 @@
 # Ludo em C
 
-Bem-vindo ao repositório do projeto Ludo em linguagem C! Este é um projeto em desenvolvimento por [seu nome] e [nome do seu parceiro], com o objetivo de criar uma versão do jogo Ludo utilizando a linguagem de programação C.
+Bem-vindo ao repositório do projeto Ludo em linguagem C! Este é um projeto em desenvolvimento por João Vitor da Silva e Murilo Cobriski, com o objetivo de criar uma versão do jogo Ludo utilizando a linguagem de programação C.
 
 ## Objetivo
 
