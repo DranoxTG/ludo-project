@@ -8,7 +8,7 @@ O objetivo deste projeto é desenvolver um jogo de Ludo totalmente funcional em 
 
 ## Estrutura do Projeto
 
-No momento, estamos nos estágios iniciais do desenvolvimento e a estrutura do projeto é simples. Até agora, temos apenas um arquivo de código-fonte (`ludo.c`) que contém o esqueleto básico do jogo.
+No momento, estamos nos estágios iniciais do desenvolvimento e a estrutura do projeto é simples. Até agora, temos apenas um arquivo de código-fonte (`main.c`) que contém o esqueleto básico do jogo.
 
 ## Próximos Passos
 
