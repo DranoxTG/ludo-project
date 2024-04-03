@@ -156,7 +156,14 @@ printf("[][][][][][][][][][][][][][][][][][][][][][][][][]\n");
             }
             break;
         case 2:
-            printf("Mostrando regras...\n");
+            printf("Regras sendo criadas.. (em desenvolvimento)\n");
+            printf("DIGITE 1 PARA VOLTAR AO MENU PRINCIPAL\n");
+            scanf("%d", &option);
+            if (option == 1) {
+                goto menu_principal;
+            } else {
+                printf("Opção inválida!\n");
+            }
             // (REGRAS NÃO CRIADAS AINDA)
             break;
         case 3:
@@ -210,8 +217,9 @@ printf("[][][][][][][][][][][][][][][][][][][][][][][][][]\n");
 	
 	        printf("\nAperte qualquer tecla!");
 	
-	
+            
 	        getch();
+            system("cls");
             break;
         default:
             printf("Opção inválida!\n");
