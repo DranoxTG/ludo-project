@@ -1,14 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #define ALTURA 31
 #define COMPRIMENTO 61
 
-void imprimirTabuleiro(int optionplayer);
+char tabuleiro[ALTURA][COMPRIMENTO];
+
+void inicializarTabuleiro();
+void exibirTabuleiro();
 void telaBoasvindas();
 void menuPrincipal();
 void novoJogo();
 void mostrarRanking();
 void regrasJogo();
+void imprimirTabuleiro(int optionplayer);
 
 int main() {
     telaBoasvindas();
@@ -16,11 +21,9 @@ int main() {
     return 0;
 }
 
-char tabuleiro[ALTURA][COMPRIMENTO];
-
 void inicializarTabuleiro() {
     // Definição do tabuleiro
-    char tabuleiro[ALTURA][COMPRIMENTO] = {
+    char temp[ALTURA][COMPRIMENTO] = {
         ".-----------------------.---.---.---.-----------------------.",
         "|                       |   |   |   |                       |",
         "|                       |---+---+---.                       |",
@@ -57,13 +60,13 @@ void inicializarTabuleiro() {
     // Copiar o tabuleiro inicializado para a variável global tabuleiro
     for (int i = 0; i < ALTURA; i++) {
         for (int j = 0; j < COMPRIMENTO; j++) {
-            tabuleiro[i][j] = tabuleiro[i][j];
+            tabuleiro[i][j] = temp[i][j];
         }
     }
 }
 
 void exibirTabuleiro() {
-    // EXIBE O TABULEIRO
+    
     for (int i = 0; i < ALTURA; i++) {
         for (int j = 0; j < COMPRIMENTO; j++) {
             printf("%c", tabuleiro[i][j]);
@@ -101,8 +104,7 @@ void telaBoasvindas() {
 	printf("[][][][][][][][][][][][][][][][][][][][][][][][][]\n");
 	printf("[][][][][][][][][][][][][][][][][][][][][][][][][]\n");
 	printf("[][][][][][][][][][][][][][][][][][][][][][][][][]\n");
-
-	printf("\nAperte qualquer tecla!\n");
+    printf("\nAperte qualquer tecla!\n");
     getchar();
     system("cls");
 }
@@ -131,8 +133,9 @@ void menuPrincipal() {
 	printf("                 .'.eeeeeeeeeeeeeeeeee.'.      :___:\n");
 	printf("               .'.eeeeeeeeeeeeeeeeeeeeee.'.         \n");
 	printf("              :____________________________:\n");
-
-	if (scanf("%d%c", &option, &newline) != 2 || newline != '\n' || option < 1 || option > 4) {
+        printf("Digite a opção desejada: ");
+        
+        if (scanf("%d%c", &option, &newline) != 2 || newline != '\n' || option < 1 || option > 4) {
             printf("Opção inválida! Insira um número válido.\n");
             while (getchar() != '\n'); 
             continue; 
@@ -204,12 +207,14 @@ void novoJogo() {
         printf("|               4. 4 JOGADORES                       |\n");
         printf("|               5. Voltar                            |\n");
         printf("------------------------------------------------------\n");
+        printf("Digite a opção desejada: ");
+        
         if (scanf("%d%c", &optionplayer, &newline) != 2 || newline != '\n' || optionplayer < 1 || optionplayer > 5) {
             printf("Opção inválida! Insira um número válido.\n");
             while (getchar() != '\n'); 
             continue; 
         }
-        system("cls");
+
         switch (optionplayer) {
             case 1:
                 printf("Iniciando jogo para 1 jogador...\n");
@@ -247,7 +252,7 @@ void novoJogo() {
 
 void regrasJogo() {
     system("cls");
-    printf("Regras sendo criadas.. (em desenvolvimento)\n");
+    printf("Em desenvolvimento\n");
     printf("DIGITE 1 PARA VOLTAR AO MENU PRINCIPAL\n");
     int option;
     scanf("%d", &option);
@@ -258,27 +263,8 @@ void regrasJogo() {
 }
 
 void mostrarRanking() {
-     system("cls");
-    printf("Mostrando ranking...\n");
-    // RANKING EM DESENVOLVIMENTO (NÃO CRIADO AINDA 100%)
-    printf("--------------------------------------------------------------\n");
-    printf("|Mostrando ranking...                                        |\n");
-    printf("|POSICAO         NOME DO JOGADOR         QTD DE PONTOS       |\n");
-    printf("|                                                            |\n");
-    printf("|1               MURILO                  18                  |\n");
-    printf("|2               GUILHERME               15                  |\n");
-    printf("|3               LEONARDO                13                  |\n");
-    printf("|4               EDUARDO                 9                   |\n");
-    printf("|5               RAFAEL                  3                   |\n");
-    printf("|                                                            |\n");
-    printf("|                                                            |\n");
-    printf("|TABELA DE PONTOS:                                           |\n");
-    printf("|1 = 5 PONTOS                                                |\n");
-    printf("|2 = 3 PONTOS                                                |\n");
-    printf("|3 = 2 PONTOS                                                |\n");
-    printf("|4 = 1 PONTO                                                 |\n");
-    printf("|DIGITE 1 PARA VOLTAR AO MENU PRINCIPAL                      |\n");
-    printf("|____________________________________________________________|\n");
+    system("cls");
+    printf("Em dev\n");
     printf("DIGITE 1 PARA VOLTAR AO MENU PRINCIPAL\n");
     int option;
     scanf("%d", &option);
@@ -320,4 +306,7 @@ printf("|                     \x1b[34m>\x1b[0m |   | \x1b[34m^\x1b[0m |   |     
 printf("|                       |---+---+---|                       |\n");
 printf("|                       |   |   |   |                       |\n");
 printf("^-----------------------^---^---^---^-----------------------^\n");
+    exibirTabuleiro();
 		}
+
+
